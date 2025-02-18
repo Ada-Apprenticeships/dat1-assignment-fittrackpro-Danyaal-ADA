@@ -22,8 +22,8 @@ CREATE TABLE locations (
     name varchar(255) NOT NULL,
     address varchar(100) NOT NULL,
     phone_number CHAR(8) NOT NULL CHECK(phone_number LIKE '555-____'),
-    email VARCHAR(255) UNIQUE NOT NULL CHECK(email LIKE '%_@fittrackpro.com'), -- All Location emails should end with @fittrackpro.com
-    opening_hours TIME() NOT NULL
+    email VARCHAR(255), -- All Location emails should end with @fittrackpro.com
+    opening_hours varchar(12) NOT NULL
 );
 -- 2. members
 
@@ -46,7 +46,7 @@ CREATE TABLE staff (
     staff_id INTEGER PRIMARY KEY,
     first_name varchar(50) NOT NULL,
     last_name varchar(50) NOT NULL,
-    email VARCHAR(255) UNIQUE NOT NULL CHECK (email LIKE '%_._@fittrackpro.com'),
+    email VARCHAR(255),
     phone_number CHAR(8) NOT NULL CHECK(phone_number LIKE '555-____'),
     position varchar(12) NOT NULL CHECK (position IN ('Trainer', 'Manager', 'Receptionist', 'Maintenance')),
     hire_date DATE NOT NULL,
@@ -183,5 +183,3 @@ CREATE TABLE equipment_maintenance_log (
 );
 
 
--- After creating the tables, you can import the sample data using:
--- `.read data/sample_data.sql` in a sql file or `npm run import` in the terminal
