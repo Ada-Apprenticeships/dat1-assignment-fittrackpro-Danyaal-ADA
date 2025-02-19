@@ -9,11 +9,7 @@ PRAGMA foreign_keys = ON;
 -- 1. Retrieve all members
 -- TODO: Write a query to retrieve all members
 
-SELECT member_id,
-       first_name,
-       last_name,
-       email,
-       join_date
+SELECT member_id, first_name, last_name, email, join_date
 FROM members;
  
 

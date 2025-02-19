@@ -7,13 +7,6 @@
 -- Enable foreign key support
 PRAGMA foreign_keys = ON;
 
--- Create your tables here
--- Example:
--- CREATE TABLE table_name (
---     column1 datatype,
---     column2 datatype,
---     ...
--- );
 
 -- TODO: Create the following tables:
 -- 1. locations
