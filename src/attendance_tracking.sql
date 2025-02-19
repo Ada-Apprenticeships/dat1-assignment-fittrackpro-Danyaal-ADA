@@ -20,7 +20,7 @@ ORDER BY check_in_time DESC;
 
 -- 3. Find the busiest day of the week based on gym visits
 
-SELECT CASE strftime('%w', check_in_time) --CASE used to convert all numeric values for days to Weekday names
+SELECT CASE strftime('%w', check_in_time) --CASE used to convert all numeric values for days to names
            WHEN '0' THEN 'Sunday'
            WHEN '1' THEN 'Monday'
            WHEN '2' THEN 'Tuesday'

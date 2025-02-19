@@ -15,7 +15,7 @@ CREATE TABLE locations (
     name varchar(255) NOT NULL,
     address varchar(100) NOT NULL,
     phone_number CHAR(8) NOT NULL CHECK(phone_number LIKE '555-____'),
-    email VARCHAR(255), -- All Location emails should end with @fittrackpro.com
+    email VARCHAR(255), 
     opening_hours varchar(12) NOT NULL
 );
 -- 2. members
@@ -39,7 +39,7 @@ CREATE TABLE staff (
     staff_id INTEGER PRIMARY KEY,
     first_name varchar(50) NOT NULL,
     last_name varchar(50) NOT NULL,
-    email VARCHAR(255),
+    email VARCHAR(255) UNIQUE NOT NULL CHECK (email LIKE '%_._@fittrackpro.com'),
     phone_number CHAR(8) NOT NULL CHECK(phone_number LIKE '555-____'),
     position varchar(12) NOT NULL CHECK (position IN ('Trainer', 'Manager', 'Receptionist', 'Maintenance')),
     hire_date DATE NOT NULL,

@@ -44,9 +44,7 @@ LIMIT 1;
 -- 5. Find member with the least class registrations
 -- TODO: Write a query to find the member with the least class registrations
 
-SELECT m.member_id,
-       m.first_name,
-       m.last_name,
+SELECT m.member_id,  m.first_name, m.last_name,
        COUNT(ca.class_attendance_id) AS registration_count
 FROM members m
 JOIN class_attendance ca
@@ -63,4 +61,3 @@ FROM class_attendance
 WHERE attendance_status = 'Attended';
 
 
--- TODO: Write a query to calculate the percentage of members who have attended at least one class
